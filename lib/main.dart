@@ -1,69 +1,88 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const DexoCatApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class DexoCatApp extends StatelessWidget {
+  const DexoCatApp({super.key});
+  final String title = 'Dexocat';
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: title,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: DexoCatHomePage(title: title),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class DexoCatHomePage extends StatefulWidget {
+  const DexoCatHomePage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<DexoCatHomePage> createState() => _DexoCatHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+class _DexoCatHomePageState extends State<DexoCatHomePage> {
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white.withOpacity(.9),
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      body: DexoCatMobileHomePage(),
+    );
+  }
+}
+
+class DexoCatMobileHomePage extends StatelessWidget {
+  const DexoCatMobileHomePage({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Flexible(
+          flex: 8,
+          child: Container(
+            child: Column(
+              children: [
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.only(top: 50),
+                  height: 200,
+                  color: Colors.yellow,
+                  child: Text('hi'),
+                ),
+                Container(
+                  width: double.infinity,
+                  height: 300,
+                  color: Colors.red,
+                  child: Text('hi'),
+                ),
+              ],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+          ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+        Flexible(
+          flex: 2,
+          child: Container(
+            padding: const EdgeInsets.only(top: 50),
+            height: double.infinity,
+            color: Colors.blue,
+            width: 200,
+            child: Text('hi'),
+          ),
+        ),
+      ],
     );
   }
 }
