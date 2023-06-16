@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dexo/theme.dart';
+
+enum SingingCharacter { lafayette, jefferson }
 
 void main() {
-  runApp(const DexoCatApp());
+  runApp(DexoCatApp());
 }
 
 class DexoCatApp extends StatelessWidget {
-  const DexoCatApp({super.key});
+  DexoCatApp({super.key});
   final String title = 'Dexocat';
+  final DexoCatTheme dexoCatTheme = DexoCatTheme();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: title,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
+      theme: dexoCatTheme.darkTheme,
       home: DexoCatHomePage(title: title),
     );
   }
@@ -31,12 +33,48 @@ class DexoCatHomePage extends StatefulWidget {
 }
 
 class _DexoCatHomePageState extends State<DexoCatHomePage> {
+  SingingCharacter? _character = SingingCharacter.lafayette;
   int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: DexoCatMobileHomePage(),
+      appBar: AppBar(
+        title: Text('Hello Dexocat'),
+      ),
+      body: Column(
+        children: [
+          DexoCatMobileHomePage(),
+          Column(
+            children: <Widget>[
+              ListTile(
+                title: const Text('Lafayette'),
+                leading: Radio<SingingCharacter>(
+                  value: SingingCharacter.lafayette,
+                  groupValue: _character,
+                  onChanged: (SingingCharacter? value) {
+                    setState(() {
+                      _character = value;
+                    });
+                  },
+                ),
+              ),
+              ListTile(
+                title: const Text('Thomas Jefferson'),
+                leading: Radio<SingingCharacter>(
+                  value: SingingCharacter.jefferson,
+                  groupValue: _character,
+                  onChanged: (SingingCharacter? value) {
+                    setState(() {
+                      _character = value;
+                    });
+                  },
+                ),
+              ),
+            ],
+          )
+        ],
+      ),
     );
   }
 }
@@ -55,17 +93,24 @@ class DexoCatMobileHomePage extends StatelessWidget {
           child: Container(
             child: Column(
               children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'hello button',
+                    // style: TextStyle(color: Colors.yellow),
+                  ),
+                ),
                 Container(
-                  width: double.infinity,
+                  // width: double.infinity,
                   padding: const EdgeInsets.only(top: 50),
-                  height: 200,
-                  color: Colors.yellow,
+                  // height: 200,
+                  // color: Colors.yellow,
                   child: Text('hi'),
                 ),
                 Container(
-                  width: double.infinity,
-                  height: 300,
-                  color: Colors.red,
+                  // width: double.infinity,
+                  // height: 300,
+                  // color: Colors.red,
                   child: Text('hi'),
                 ),
               ],
@@ -76,9 +121,9 @@ class DexoCatMobileHomePage extends StatelessWidget {
           flex: 2,
           child: Container(
             padding: const EdgeInsets.only(top: 50),
-            height: double.infinity,
-            color: Colors.blue,
-            width: 200,
+            // height: double.infinity,
+            // color: Colors.blue,
+            // width: 200,
             child: Text('hi'),
           ),
         ),
