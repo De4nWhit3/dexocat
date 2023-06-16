@@ -16,10 +16,17 @@ class DexoCatTheme {
   DexoCatTheme() {
     darkTheme = ThemeData(
       scaffoldBackgroundColor: background,
-      appBarTheme: AppBarTheme(
-        backgroundColor: background,
+      appBarTheme: const AppBarTheme(
+        backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
+        titleTextStyle: TextStyle(
+          fontFamily: 'Sarabun',
+          fontSize: 20,
+        ),
       ),
+      splashColor: splash,
+      useMaterial3: true,
+      canvasColor: Colors.transparent,
     );
   }
 
