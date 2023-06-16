@@ -37,15 +37,23 @@ class _DexoCatHomePageState extends State<DexoCatHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Material(
-          child: Ink(
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-            ),
-            child: InkWell(
-              onTap: () {},
-              customBorder: const CircleBorder(),
-              child: Image.asset('assets/images/logo/logo.png'),
+        leading: Container(
+          padding: const EdgeInsets.only(left: 20),
+          child: Transform.scale(
+            scale: 1.5,
+            child: Material(
+              child: Ink(
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                ),
+                child: InkWell(
+                  onTap: () {},
+                  customBorder: const CircleBorder(),
+                  child: Image.asset(
+                    'assets/images/logo/logo.png',
+                  ),
+                ),
+              ),
             ),
           ),
         ),

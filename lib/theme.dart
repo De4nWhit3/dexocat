@@ -15,13 +15,61 @@ class DexoCatTheme {
 
   DexoCatTheme() {
     darkTheme = ThemeData(
+      textTheme: TextTheme(
+        bodyLarge: TextStyle(
+          color: font,
+        ),
+        bodyMedium: TextStyle(
+          color: font,
+        ),
+        bodySmall: TextStyle(
+          color: font,
+        ),
+        displayLarge: TextStyle(
+          color: font,
+        ),
+        displayMedium: TextStyle(
+          color: font,
+        ),
+        displaySmall: TextStyle(
+          color: font,
+        ),
+        headlineLarge: TextStyle(
+          color: font,
+        ),
+        headlineMedium: TextStyle(
+          color: font,
+        ),
+        headlineSmall: TextStyle(
+          color: font,
+        ),
+        labelLarge: TextStyle(
+          color: font,
+        ),
+        labelMedium: TextStyle(
+          color: font,
+        ),
+        labelSmall: TextStyle(
+          color: font,
+        ),
+        titleLarge: TextStyle(
+          color: font,
+        ),
+        titleMedium: TextStyle(
+          color: font,
+        ),
+        titleSmall: TextStyle(
+          color: font,
+        ),
+      ),
       scaffoldBackgroundColor: background,
-      appBarTheme: const AppBarTheme(
+      appBarTheme: AppBarTheme(
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
         titleTextStyle: TextStyle(
           fontFamily: 'Sarabun',
           fontSize: 20,
+          color: font,
         ),
       ),
       splashColor: splash,
