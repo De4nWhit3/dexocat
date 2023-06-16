@@ -15,6 +15,13 @@ class DexoCatTheme {
 
   DexoCatTheme() {
     darkTheme = ThemeData(
+      textButtonTheme: TextButtonThemeData(
+        style: ButtonStyle(
+          foregroundColor: MaterialStateProperty.resolveWith((states) {
+            return accent;
+          }),
+        ),
+      ),
       textTheme: TextTheme(
         bodyLarge: TextStyle(
           color: font,

@@ -60,8 +60,41 @@ class _DexoCatHomePageState extends State<DexoCatHomePage> {
         title: Text(
           widget.title,
         ),
+        actions: [
+          AppBarActionButton(
+            title: 'Register',
+            onPressed: () {},
+          ),
+          AppBarActionButton(
+            title: 'Login',
+            onPressed: () {},
+          ),
+        ],
       ),
       body: const Column(),
+    );
+  }
+}
+
+class AppBarActionButton extends StatelessWidget {
+  final String title;
+  final Function onPressed;
+  const AppBarActionButton({
+    super.key,
+    required this.title,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () {
+        onPressed();
+      },
+      child: Text(
+        title,
+        style: const TextStyle(fontWeight: FontWeight.normal),
+      ),
     );
   }
 }
