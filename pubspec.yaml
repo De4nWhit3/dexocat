@@ -94,6 +94,9 @@ flutter:
         - asset: assets/fonts/Fira_Sans/FiraSans-Medium.ttf
         - asset: assets/fonts/Fira_Sans/FiraSans-Regular.ttf
         - asset: assets/fonts/Fira_Sans/FiraSans-SemiBold.ttf
+    - family: RubikDirt
+      fonts:
+        - asset: assets/fonts/Rubik_Dirt/RubikDirt-Regular.ttf
 
   #   - family: Schyler
   #     fonts:

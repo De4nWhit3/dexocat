@@ -9,7 +9,7 @@ void main() {
 
 class DexoCatApp extends StatelessWidget {
   DexoCatApp({super.key});
-  final String title = 'Dexocat';
+  final String title = 'DexoCat';
   final DexoCatTheme dexoCatTheme = DexoCatTheme();
 
   @override
@@ -71,7 +71,50 @@ class _DexoCatHomePageState extends State<DexoCatHomePage> {
           ),
         ],
       ),
-      body: const Column(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'Welcome to ',
+                  style: TextStyle(
+                    fontFamily: 'DancingScript',
+                    fontSize: 30,
+                  ),
+                ),
+                Text(
+                  widget.title,
+                  style: const TextStyle(
+                    fontFamily: 'RubikDirt',
+                    fontSize: 35,
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: RichText(
+                textAlign: TextAlign.center,
+                text: const TextSpan(children: [
+                  TextSpan(
+                      text:
+                          "An easy to use platform that values your privacy, and best of all; "),
+                  TextSpan(
+                    text: "no ads",
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      decorationThickness: 2,
+                    ),
+                  ),
+                  TextSpan(text: "."),
+                ]),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

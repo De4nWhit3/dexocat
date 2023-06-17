@@ -25,53 +25,67 @@ class DexoCatTheme {
       textTheme: TextTheme(
         bodyLarge: TextStyle(
           color: font,
+          fontFamily: 'Sarabun',
         ),
         bodyMedium: TextStyle(
           color: font,
+          fontFamily: 'Sarabun',
         ),
         bodySmall: TextStyle(
           color: font,
         ),
         displayLarge: TextStyle(
           color: font,
+          fontFamily: 'Sarabun',
         ),
         displayMedium: TextStyle(
           color: font,
+          fontFamily: 'Sarabun',
         ),
         displaySmall: TextStyle(
           color: font,
+          fontFamily: 'Sarabun',
         ),
         headlineLarge: TextStyle(
           color: font,
+          fontFamily: 'Sarabun',
         ),
         headlineMedium: TextStyle(
           color: font,
+          fontFamily: 'Sarabun',
         ),
         headlineSmall: TextStyle(
           color: font,
+          fontFamily: 'Sarabun',
         ),
         labelLarge: TextStyle(
           color: font,
+          fontFamily: 'Sarabun',
         ),
         labelMedium: TextStyle(
           color: font,
+          fontFamily: 'Sarabun',
         ),
         labelSmall: TextStyle(
           color: font,
+          fontFamily: 'Sarabun',
         ),
         titleLarge: TextStyle(
           color: font,
+          fontFamily: 'Sarabun',
         ),
         titleMedium: TextStyle(
           color: font,
+          fontFamily: 'Sarabun',
         ),
         titleSmall: TextStyle(
           color: font,
+          fontFamily: 'Sarabun',
         ),
       ),
       scaffoldBackgroundColor: background,
       appBarTheme: AppBarTheme(
-        backgroundColor: Colors.transparent,
+        backgroundColor: background,
         shadowColor: Colors.transparent,
         titleTextStyle: TextStyle(
           fontFamily: 'Sarabun',
